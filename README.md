@@ -57,7 +57,7 @@ Bu uygulama, **Spring Boot** framework'ü kullanılarak uygulama geliştirme hı
 1. **Kodun Çekilmesi**:
    GitHub'daki repo klonlanarak kod bilgisayara alınır:
    ```bash
-   git clone https://github.com/your-repository/live-betting-app.git
+   git clone https://github.com/burakovant/live-betting-app.git
    cd live-betting-app
    ```
 
@@ -94,32 +94,10 @@ Uygulama, hem happy-path (ideal senaryolar) hem de corner-case (köşe durumlar)
 - Tüm endpoint'lerden beklenen verilerin başarıyla dönmesi.
 
 ### 2. Corner-Case Senaryoları
-- İlişkili olmayan bir `Odds` kaydına erişim denemelerinde hata yönetimi.
-- Gelecek tarihli olmayan bir maç üretildiğinde validasyon hatasının düzgün yönetilmesi.
-- Veritabanında eklenmiş bir kayıt üzerinde güncelleme işlemleri sırasında çelişkili isteklerin (concurrent transactions) doğru handle edilmesi.
+- 'Odds' verilerinin geçmişinin eskiden yeniye doğru düzgün sıralandığının kontrolü.
+- Bir maça maksimum 500 çoklu kupon yapılabildiğinin kontrolü.
+- Kupon oynama isteğinin 2 saniyeyi geçtiği durumda hata fırlatılıp işlemlerin rollback edildiğinin kontrolü.
 
----
-
-## Öne Çıkan Özellikler
-
-1. **Otomatik Veri Üretimi**:
-   İlk başlangıç sırasında `CommandLineRunner` sınıfı aracılığıyla verilmiş örnek lig ve takımlardan 100 rastgele maç oluşturulur ve bu maçlara oran atanır.
-
-2. **Dinamik Oran Güncelleme Simülasyonu**:
-   Oranların düzenli olarak simüle edilebilmesi için altyapı mevcuttur. Bu özellik isteğe bağlı geliştirilip sistemde kullanılabilir.
-
-3. **Zengin Bağımlılıklar**:
-    - **Spring Boot Actuator** ile canlı sistemden metric yönetimi sağlanabilir.
-    - Geliştirme kolaylığı için H2 Console ve Lombok desteklenmiştir.
-
----
-
-## Katkıda Bulunma
-
-Projeye katkıda bulunmak isterseniz:
-1. Bir fork oluşturun.
-2. Yeni bir özellik üzerinde çalışın (örn. canlı oran yayını yapan bir websocket endpoint).
-3. Pull Request gönderin.
 
 ---
 
@@ -134,8 +112,9 @@ Projeye katkıda bulunmak isterseniz:
 3. **Dış API Entegrasyonu**:
    Gerçek lig bilgilerini bir spor servisi API'sinden alarak simülasyonu zenginleştirmek.
 
+
 ---
 
 ## Yazarlar ve Lisans
 
-Bu proje, **[YAZAR ADI]** tarafından geliştirilmiş ve açık kaynaklı olarak yayınlanmıştır. Lisans, MIT Lisans formatındadır.
+Bu proje, **Burak Sezin Ovant** tarafından geliştirilmiş ve açık kaynaklı olarak yayınlanmıştır. Lisans, MIT Lisans formatındadır.
