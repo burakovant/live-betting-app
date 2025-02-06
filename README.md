@@ -78,8 +78,8 @@ Bu uygulama, **Spring Boot** framework'ü kullanılarak uygulama geliştirme hı
    ```text
    URL: http://localhost:8080/h2-console
    JDBC URL: jdbc:h2:mem:testdb
-   User: sa
-   Password: 
+   User: db_admin
+   Password: password
    ```
 
 ---
